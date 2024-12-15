@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/L.Control.Layers.Tree.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-measure.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title>Test3 (QFieldCloud)</title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/L.Control.Layers.Tree.min.js"></script>
+        <script src="js/leaflet-svg-shape-markers.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet-measure.js"></script>
+        <script src="data/StickerundGraffiti_1.js"></script>
+        <script src="data/Aushnge_2.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:false, maxZoom:28, minZoom:1
+        }).fitBounds([[52.46007329050969,13.476624966275878],[52.46800198462646,13.494693765337173]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        // remove popup's row if "visible-with-data"
+        function removeEmptyRowsFromPopupContent(content, feature) {
+         var tempDiv = document.createElement('div');
+         tempDiv.innerHTML = content;
+         var rows = tempDiv.querySelectorAll('tr');
+         for (var i = 0; i < rows.length; i++) {
+             var td = rows[i].querySelector('td.visible-with-data');
+             var key = td ? td.id : '';
+             if (td && td.classList.contains('visible-with-data') && feature.properties[key] == null) {
+                 rows[i].parentNode.removeChild(rows[i]);
+             }
+         }
+         return tempDiv.innerHTML;
+        }
+        // add class to format popup if it contains media
+		function addClassToPopupIfMedia(content, popup) {
+			var tempDiv = document.createElement('div');
+			tempDiv.innerHTML = content;
+			if (tempDiv.querySelector('td img')) {
+				popup._contentNode.classList.add('media');
+					// Delay to force the redraw
+					setTimeout(function() {
+						popup.update();
+					}, 10);
+			} else {
+				popup._contentNode.classList.remove('media');
+			}
+		}
+        var title = new L.Control({'position':'topright'});
+        title.onAdd = function (map) {
+            this._div = L.DomUtil.create('div', 'info');
+            this.update();
+            return this._div;
+        };
+        title.update = function () {
+            this._div.innerHTML = '<h2>Test3 (QFieldCloud)</h2>';
+        };
+        title.addTo(map);
+        var zoomControl = L.control.zoom({
+            position: 'topleft'
+        }).addTo(map);
+        var measureControl = new L.Control.Measure({
+            position: 'topleft',
+            primaryLengthUnit: 'meters',
+            secondaryLengthUnit: 'kilometers',
+            primaryAreaUnit: 'sqmeters',
+            secondaryAreaUnit: 'hectares'
+        });
+        measureControl.addTo(map);
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0].innerHTML = '';
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0].className += ' fas fa-ruler';
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        map.createPane('pane_Voyagernolabelsretina_0');
+        map.getPane('pane_Voyagernolabelsretina_0').style.zIndex = 400;
+        var layer_Voyagernolabelsretina_0 = L.tileLayer('https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}@2x.png', {
+            pane: 'pane_Voyagernolabelsretina_0',
+            opacity: 1.0,
+            attribution: '<a href="https://cartodb.com/basemaps/">Map tiles by CartoDB, under CC BY 3.0. Data by OpenStreetMap, under ODbL.</a>',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_Voyagernolabelsretina_0;
+        map.addLayer(layer_Voyagernolabelsretina_0);
+        function pop_StickerundGraffiti_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Bezeichnung"colspan="2"><strong>Bezeichnung</strong><br />' + (feature.properties['Bezeichnung'] !== null ? autolinker.link(feature.properties['Bezeichnung'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Zweck"colspan="2"><strong>Zweck</strong><br />' + (feature.properties['Zweck'] !== null ? autolinker.link(feature.properties['Zweck'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Foto"colspan="2"><strong>Foto</strong><br />' + (feature.properties['Foto'] !== null ? '<img src="images/' + String(feature.properties['Foto']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Zustand"colspan="2"><strong>Zustand</strong><br />' + (feature.properties['Zustand'] !== null ? autolinker.link(feature.properties['Zustand'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Datum"colspan="2"><strong>Datum</strong><br />' + (feature.properties['Datum'] !== null ? autolinker.link(feature.properties['Datum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Bemerkung"colspan="2"><strong>Bemerkung</strong><br />' + (feature.properties['Bemerkung'] !== null ? autolinker.link(feature.properties['Bemerkung'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_StickerundGraffiti_1_0(feature) {
+            switch(String(feature.properties['Zweck'])) {
+                case 'Kommerziell':
+                    return {
+                pane: 'pane_StickerundGraffiti_1',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(48,18,59,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Kunst':
+                    return {
+                pane: 'pane_StickerundGraffiti_1',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(40,188,235,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Politisch':
+                    return {
+                pane: 'pane_StickerundGraffiti_1',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(164,252,60,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Tag':
+                    return {
+                pane: 'pane_StickerundGraffiti_1',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(251,126,33,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Verein/Verband':
+                    return {
+                pane: 'pane_StickerundGraffiti_1',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(122,4,3,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_StickerundGraffiti_1');
+        map.getPane('pane_StickerundGraffiti_1').style.zIndex = 401;
+        map.getPane('pane_StickerundGraffiti_1').style['mix-blend-mode'] = 'normal';
+        var layer_StickerundGraffiti_1 = new L.geoJson(json_StickerundGraffiti_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_StickerundGraffiti_1',
+            layerName: 'layer_StickerundGraffiti_1',
+            pane: 'pane_StickerundGraffiti_1',
+            onEachFeature: pop_StickerundGraffiti_1,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_StickerundGraffiti_1_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_StickerundGraffiti_1);
+        map.addLayer(layer_StickerundGraffiti_1);
+        function pop_Aushnge_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Thematik"colspan="2"><strong>Thematik</strong><br />' + (feature.properties['Thematik'] !== null ? autolinker.link(feature.properties['Thematik'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Foto"colspan="2"><strong>Foto</strong><br />' + (feature.properties['Foto'] !== null ? '<img src="images/' + String(feature.properties['Foto']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Zustand</strong><br />' + (feature.properties['Zustand'] !== null ? autolinker.link(feature.properties['Zustand'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Nutzung"colspan="2"><strong>Nutzung</strong><br />' + (feature.properties['Nutzung'] !== null ? autolinker.link(feature.properties['Nutzung'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Datum"colspan="2"><strong>Datum</strong><br />' + (feature.properties['Datum'] !== null ? autolinker.link(feature.properties['Datum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Bemerkung"colspan="2"><strong>Bemerkung</strong><br />' + (feature.properties['Bemerkung'] !== null ? autolinker.link(feature.properties['Bemerkung'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_Aushnge_2_0(feature) {
+            switch(String(feature.properties['Thematik'])) {
+                case 'Ankauf/Verkauf':
+                    return {
+                pane: 'pane_Aushnge_2',
+                shape: 'triangle',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(50,87,128,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(241,238,246,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Dienstleistung':
+                    return {
+                pane: 'pane_Aushnge_2',
+                shape: 'triangle',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(50,87,128,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(218,154,203,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Sonstige':
+                    return {
+                pane: 'pane_Aushnge_2',
+                shape: 'triangle',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(50,87,128,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(222,52,138,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Wohnungssuche':
+                    return {
+                pane: 'pane_Aushnge_2',
+                shape: 'triangle',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(50,87,128,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(152,0,67,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Aushnge_2');
+        map.getPane('pane_Aushnge_2').style.zIndex = 402;
+        map.getPane('pane_Aushnge_2').style['mix-blend-mode'] = 'normal';
+        var layer_Aushnge_2 = new L.geoJson(json_Aushnge_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Aushnge_2',
+            layerName: 'layer_Aushnge_2',
+            pane: 'pane_Aushnge_2',
+            onEachFeature: pop_Aushnge_2,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.shapeMarker(latlng, style_Aushnge_2_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Aushnge_2);
+        map.addLayer(layer_Aushnge_2);
+        var overlaysTree = [
+            {label: 'Aushänge<br /><table><tr><td style="text-align: center;"><img src="legend/Aushnge_2_AnkaufVerkauf0.png" /></td><td>Ankauf/Verkauf</td></tr><tr><td style="text-align: center;"><img src="legend/Aushnge_2_Dienstleitung1.png" /></td><td>Dienstleitung</td></tr><tr><td style="text-align: center;"><img src="legend/Aushnge_2_Sonstige2.png" /></td><td>Sonstige</td></tr><tr><td style="text-align: center;"><img src="legend/Aushnge_2_Wohnungssuche3.png" /></td><td>Wohnungssuche</td></tr></table>', layer: layer_Aushnge_2},
+            {label: 'Sticker und Graffiti<br /><table><tr><td style="text-align: center;"><img src="legend/StickerundGraffiti_1_Kommerziell0.png" /></td><td>Kommerziell</td></tr><tr><td style="text-align: center;"><img src="legend/StickerundGraffiti_1_Kunst1.png" /></td><td>Kunst</td></tr><tr><td style="text-align: center;"><img src="legend/StickerundGraffiti_1_Politisch2.png" /></td><td>Politisch</td></tr><tr><td style="text-align: center;"><img src="legend/StickerundGraffiti_1_Tag3.png" /></td><td>Tag</td></tr><tr><td style="text-align: center;"><img src="legend/StickerundGraffiti_1_VereinVerband4.png" /></td><td>Verein/Verband</td></tr></table>', layer: layer_StickerundGraffiti_1},
+            {label: "Voyager [no labels] (retina)", layer: layer_Voyagernolabelsretina_0, radioGroup: 'bm' },]
+        var lay = L.control.layers.tree(null, overlaysTree,{
+            //namedToggle: true,
+            //selectorBack: false,
+            //closedSymbol: '&#8862; &#x1f5c0;',
+            //openedSymbol: '&#8863; &#x1f5c1;',
+            //collapseAll: 'Collapse all',
+            //expandAll: 'Expand all',
+            collapsed: false, 
+        });
+        lay.addTo(map);
+		document.addEventListener("DOMContentLoaded", function() {
+            // set new Layers List height which considers toggle icon
+            function newLayersListHeight() {
+                var layerScrollbarElement = document.querySelector('.leaflet-control-layers-scrollbar');
+                if (layerScrollbarElement) {
+                    var layersListElement = document.querySelector('.leaflet-control-layers-list');
+                    var originalHeight = layersListElement.style.height 
+                        || window.getComputedStyle(layersListElement).height;
+                    var newHeight = parseFloat(originalHeight) - 50;
+                    layersListElement.style.height = newHeight + 'px';
+                }
+            }
+            var isLayersListExpanded = true;
+            var controlLayersElement = document.querySelector('.leaflet-control-layers');
+            var toggleLayerControl = document.querySelector('.leaflet-control-layers-toggle');
+            // toggle Collapsed/Expanded and apply new Layers List height
+            toggleLayerControl.addEventListener('click', function() {
+                if (isLayersListExpanded) {
+                    controlLayersElement.classList.remove('leaflet-control-layers-expanded');
+                } else {
+                    controlLayersElement.classList.add('leaflet-control-layers-expanded');
+                }
+                isLayersListExpanded = !isLayersListExpanded;
+                newLayersListHeight()
+            });	
+			// apply new Layers List height if toggle layerstree
+			if (controlLayersElement) {
+				controlLayersElement.addEventListener('click', function(event) {
+					var toggleLayerHeaderPointer = event.target.closest('.leaflet-layerstree-header-pointer span');
+					if (toggleLayerHeaderPointer) {
+						newLayersListHeight();
+					}
+				});
+			}
+            // Collapsed/Expanded at Start to apply new height
+            setTimeout(function() {
+                toggleLayerControl.click();
+            }, 10);
+            setTimeout(function() {
+                toggleLayerControl.click();
+            }, 10);
+            // Collapsed touch/small screen
+            var isSmallScreen = window.innerWidth < 650;
+            if (isSmallScreen) {
+                setTimeout(function() {
+                    controlLayersElement.classList.remove('leaflet-control-layers-expanded');
+                    isLayersListExpanded = !isLayersListExpanded;
+                }, 500);
+            }  
+        });       
+        setBounds();
+        </script>
+    </body>
+</html>
