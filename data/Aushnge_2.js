@@ -73,7 +73,7 @@ var json_Aushnge_2 = {
                 "Foto": "DCIM/JPEG_20241215120405329.jpg",
                 "Zustand": "Schlecht",
                 "Nutzung": "Kommerziell",
-                "Datum": "2023-12-15",
+                "Datum": "2024-12-15",
                 "Bemerkung": "Impro Comedy Show verschoben, Barbie vs Ken Konzept, Wilhelminenhofstr. 92, kostenlos"
             },
             "geometry": {
@@ -92,7 +92,7 @@ var json_Aushnge_2 = {
                 "Zustand": "Schlecht",
                 "Nutzung": "Kommerziell",
                 "Datum": "2024-12-15",
-                "Bemerkung": "Bzndnis gegen Wohn..., stark beschaedigter Aufkleber mit Haeuser-Illustration"
+                "Bemerkung": "Bündnis gegen Wohn..., stark beschädigter Aufkleber mit Häuser-Illustration"
             },
             "geometry": {
                 "type": "Point",
@@ -111,7 +111,7 @@ var json_Aushnge_2 = {
                 "Zustand": "Gut",
                 "Nutzung": "Kommerziell",
                 "Datum": "2024-12-15",
-                "Bemerkung": "Winter Basar der Freien Waldorfschule Berlin, Schnellerstr. 1-5, mit Weihnachtsaktivitaeten und Pizzaofen"
+                "Bemerkung": "Winter Basar der Freien Waldorfschule Berlin, Schnellerstr. 1-5, mit Weihnachtsaktivitäten und Pizzaofen"
             },
             "geometry": {
                 "type": "Point",
@@ -130,7 +130,7 @@ var json_Aushnge_2 = {
                 "Zustand": "Schlecht",
                 "Nutzung": "Privat",
                 "Datum": "2024-12-15",
-                "Bemerkung": "Unterschriften-Aktion von den Berliner Baeder-Betriebe zur Schwimmhalle Baumschulenweg"
+                "Bemerkung": "Unterschriften-Aktion von den Berliner Bäder-Betriebe zur Schwimmhalle Baumschulenweg"
             },
             "geometry": {
                 "type": "Point",
@@ -149,7 +149,7 @@ var json_Aushnge_2 = {
                 "Zustand": "Gut",
                 "Nutzung": "Politisch",
                 "Datum": "2024-12-15",
-                "Bemerkung": "Buergerbeteiligung fuer Machbarkeitsstudie Uferweg am Britzer Verbindungskanal, Online-Teilnahme via mein.berlin.de"
+                "Bemerkung": "Bürgerbeteiligung für Machbarkeitsstudie Uferweg am Britzer Verbindungskanal, Online-Teilnahme via mein.berlin.de"
             },
             "geometry": {
                 "type": "Point",

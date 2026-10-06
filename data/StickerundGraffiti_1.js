@@ -36,7 +36,7 @@ var json_StickerundGraffiti_1 = {
                 "Foto": "DCIM/test-cloud-3_20241214141037194.jpg",
                 "Zustand": "Lesbar",
                 "Datum": "2024-12-14",
-                "Bemerkung": "Graffiti-Tag mit Bezug zu Hertha BSC, durchgestrichen von rivalisierenden Fans, typisches Beispiel für Fußball-Rivalitaet"
+                "Bemerkung": "Graffiti-Tag mit Bezug zu Hertha BSC, durchgestrichen von rivalisierenden Fans, typisches Beispiel für Fußball-Rivalitätt"
             },
             "geometry": {
                 "type": "Point",
@@ -50,12 +50,12 @@ var json_StickerundGraffiti_1 = {
             "type": "Feature",
             "properties": {
                 "fid": "4",
-                "Bezeichnung": "Stoppt die Kuerzungen für die freien darstellenden Künste Sticker",
+                "Bezeichnung": "Stoppt die Kürzungen für die freien darstellenden Künste Sticker",
                 "Zweck": "Politisch",
                 "Foto": "DCIM/test-cloud-3_20241214141246552.jpg",
                 "Zustand": "Gut",
                 "Datum": "2024-12-14",
-                "Bemerkung": "Blau weiß gestreifter Sticker in Schildform, Protest gegen Kulturförderungskuerzungen"
+                "Bemerkung": "Blau weiß gestreifter Sticker in Schildform, Protest gegen Kulturförderungskürzungen"
             },
             "geometry": {
                 "type": "Point",
@@ -93,7 +93,7 @@ var json_StickerundGraffiti_1 = {
                 "Foto": "DCIM/test-cloud-3_20241214141626119.jpg",
                 "Zustand": "Lesbar",
                 "Datum": "2024-12-14",
-                "Bemerkung": "Getraenkewerbung mit Flaschenentwicklung von 2013 bis 2017"
+                "Bemerkung": "Getränkewerbung mit Flaschenentwicklung von 2013 bis 2017"
             },
             "geometry": {
                 "type": "Point",
@@ -112,7 +112,7 @@ var json_StickerundGraffiti_1 = {
                 "Foto": "DCIM/test-cloud-3_20241214141735769.jpg",
                 "Zustand": "Gut",
                 "Datum": "2024-12-14",
-                "Bemerkung": "Mehrere verschiedene Fansticker des 1 FC Union Berlin uebereinander auf  Regenrinne"
+                "Bemerkung": "Mehrere verschiedene Fansticker des 1 FC Union Berlin übereinander auf  Regenrinne"
             },
             "geometry": {
                 "type": "Point",
@@ -150,7 +150,7 @@ var json_StickerundGraffiti_1 = {
                 "Foto": "DCIM/test-cloud-3_20241214142418213.jpg",
                 "Zustand": "Gut",
                 "Datum": "2024-12-14",
-                "Bemerkung": "Sticker kombiniert israelische Flagge mit Berliner Baer, klare politische Botschaft gegen Antisemitismus"
+                "Bemerkung": "Sticker kombiniert israelische Flagge mit Berliner Bär, klare politische Botschaft gegen Antisemitismus"
             },
             "geometry": {
                 "type": "Point",
@@ -226,7 +226,7 @@ var json_StickerundGraffiti_1 = {
                 "Foto": "DCIM/test-cloud-3_20241214143307847.jpg",
                 "Zustand": "Lesbar",
                 "Datum": "2024-12-14",
-                "Bemerkung": "Temporaere gegenstände sorgen für mobile aneignung"
+                "Bemerkung": "Temporäre Gegenstände sorgen für mobile Aneignung"
             },
             "geometry": {
                 "type": "Point",
@@ -320,7 +320,7 @@ var json_StickerundGraffiti_1 = {
                 "Foto": "DCIM/test-cloud-3_20241214144225587.jpg",
                 "Zustand": "Gut",
                 "Datum": "2024-12-14",
-                "Bemerkung": "Aufwaendigeres Graffiti mit Füllungen und Konturen in blau-rot-weiß"
+                "Bemerkung": "Aufwändigeres Graffiti mit Füllungen und Konturen in blau-rot-weiß"
             },
             "geometry": {
                 "type": "Point",
@@ -507,7 +507,7 @@ var json_StickerundGraffiti_1 = {
                 "Foto": "DCIM/test-cloud-3_20241214151220950.jpg",
                 "Zustand": "Schlecht",
                 "Datum": "2024-12-14",
-                "Bemerkung": "Teilweise abgerissener ueberklebter Union Berlin Sticker mit einem Logo der Schule Spandau darüber"
+                "Bemerkung": "Teilweise abgerissener überklebter Union Berlin Sticker mit einem Logo der Schule Spandau darüber"
             },
             "geometry": {
                 "type": "Point",
@@ -539,12 +539,12 @@ var json_StickerundGraffiti_1 = {
             "type": "Feature",
             "properties": {
                 "fid": "30",
-                "Bezeichnung": "Kostenlose Kelleraufloesung Sticker",
+                "Bezeichnung": "Kostenlose Kellerauflösung Sticker",
                 "Zweck": "Kommerziell",
                 "Foto": "DCIM/test-cloud-3_20241215123030428.jpg",
                 "Zustand": "Gut",
                 "Datum": "2024-12-15",
-                "Bemerkung": "Professioneller Aufkleber fuer kostenlose Entruempelung mit Kontaktdaten und LKW-Symbol"
+                "Bemerkung": "Professioneller Aufkleber für kostenlose Entrümpelung mit Kontaktdaten und LKW-Symbol"
             },
             "geometry": {
                 "type": "Point",
@@ -562,7 +562,7 @@ var json_StickerundGraffiti_1 = {
                 "Foto": "DCIM/test-cloud-3_20241215123222387.jpg",
                 "Zustand": "Gut",
                 "Datum": "2024-12-15",
-                "Bemerkung": "Politischer Sticker der Jugend fuer Sozialismus zu Mietenkrise, schwarz auf weiss"
+                "Bemerkung": "Politischer Sticker der Jugend für Sozialismus zu Mietenkrise, schwarz auf weiß"
             },
             "geometry": {
                 "type": "Point",
@@ -580,7 +580,7 @@ var json_StickerundGraffiti_1 = {
                 "Foto": "DCIM/test-cloud-3_20241215123347214.jpg",
                 "Zustand": "Gut",
                 "Datum": "2024-12-15",
-                "Bemerkung": "Aufkleber des Skateboard-Ladens in schlichtem schwarz-weiss Design"
+                "Bemerkung": "Aufkleber des Skateboard-Ladens in schlichtem schwarz-weiß Design"
             },
             "geometry": {
                 "type": "Point",
@@ -598,7 +598,7 @@ var json_StickerundGraffiti_1 = {
                 "Foto": "DCIM/test-cloud-3_20241215123548867.jpg",
                 "Zustand": "Schlecht",
                 "Datum": "2024-12-15",
-                "Bemerkung": "Mehrere Tags und Graffiti auf verwittertem Untergrund, teilweise uebereinander"
+                "Bemerkung": "Mehrere Tags und Graffiti auf verwittertem Untergrund, teilweise übereinander"
             },
             "geometry": {
                 "type": "Point",
@@ -652,7 +652,7 @@ var json_StickerundGraffiti_1 = {
                 "Foto": "DCIM/test-cloud-3_20241215124339660.jpg",
                 "Zustand": "Gut",
                 "Datum": "2024-12-15",
-                "Bemerkung": "Grossflaechiges rotes Graffiti mit gelber Umrandung, davor Fahrradstaender"
+                "Bemerkung": "Großflächiges rotes Graffiti mit gelber Umrandung, davor Fahrradständer"
             },
             "geometry": {
                 "type": "Point",
@@ -688,7 +688,7 @@ var json_StickerundGraffiti_1 = {
                 "Foto": "DCIM/test-cloud-3_20241215124552769.jpg",
                 "Zustand": "Schlecht",
                 "Datum": "2024-12-15",
-                "Bemerkung": "Ueberspruehtes Verkehrsschild vermutlich Gruenanlage, mehrfarbig mit verschiedenen Tags und Stickern"
+                "Bemerkung": "Übersprühtes Verkehrsschild vermutlich Grünanlage, mehrfarbig mit verschiedenen Tags und Stickern"
             },
             "geometry": {
                 "type": "Point",
@@ -706,7 +706,7 @@ var json_StickerundGraffiti_1 = {
                 "Foto": "DCIM/test-cloud-3_20241215124652563.jpg",
                 "Zustand": "Lesbar",
                 "Datum": "2024-12-15",
-                "Bemerkung": "Stilisierte lila Figur, kuenstlerisches Graffiti mit blauem Hintergrund, signiert"
+                "Bemerkung": "Stilisierte lila Figur, künstlerisches Graffiti mit blauem Hintergrund, signiert"
             },
             "geometry": {
                 "type": "Point",
@@ -778,7 +778,7 @@ var json_StickerundGraffiti_1 = {
                 "Foto": "DCIM/test-cloud-3_20241215125814285.jpg",
                 "Zustand": "Gut",
                 "Datum": "2024-12-15",
-                "Bemerkung": "Blaues Graffiti auf Rolladen einer Gebaeudereinigungsfirma GNH"
+                "Bemerkung": "Blaues Graffiti auf Rolladen einer Gebäudereinigungsfirma GNH"
             },
             "geometry": {
                 "type": "Point",
